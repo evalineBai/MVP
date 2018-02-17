@@ -7,10 +7,8 @@
   > The blockchain is a nebulous object for many and this simple web application helps make transaction information more accessible.
 
 ## Get Started ##
-```* npm install dependencies
-```
-```* Run the start scripts located in package.json
-```
+ 1. npm install dependencies
+ 2. Run the start scripts located in package.json
 
 ## Addition Info ##
   > To learn more about blockchain or the BlockCypher API, visit https://www.blockcypher.com/
