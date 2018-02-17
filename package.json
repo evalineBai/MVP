@@ -1,0 +1,51 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "## Blockchain Explorer ##",
+  "main": "index.js",
+  "scripts": {
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evalineBai/MVP.git"
+  },
+  "author": "Evaline Bai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evalineBai/MVP/issues"
+  },
+  "homepage": "https://github.com/evalineBai/MVP#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-static": "^1.2.5",
+    "mongoose": "^5.0.6",
+    "nodemon": "^1.15.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^0.28.9",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  }
+}
