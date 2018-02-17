@@ -3,14 +3,13 @@
 ## Blockchain Explorer ##
 
 ## Summary ##
-  > This application accesses Bitcoin blockchain data from the BlockCypher API and delivers address and transaction information to the user.
+  > This application accesses the Bitcoin blockchain via the BlockCypher API and presents account transaction information to the user.
 
-## Value Proposition ##
+## Value ##
   > The blockchain is a nebulous object for many and this simple web application helps make transaction information more accessible.
 
-## How to Get Started ##
-  > npm server-dev
-  > ...or check out the app online
+## Get Started ##
+  > npm server-dev or check out the app online (url tbd)
 
-## Closing and Call to Action ##
+## Addition Info ##
   > To learn more about Blockchain or the BlockCypher API, visit https://www.blockcypher.com/
