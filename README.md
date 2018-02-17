@@ -1,6 +1,4 @@
-# MVP
-
-## Blockchain Explorer ##
+# MVP: Blockchain Explorer
 
 ## Summary ##
   > This application accesses the Bitcoin blockchain via the BlockCypher API and presents account transaction information to the user.
