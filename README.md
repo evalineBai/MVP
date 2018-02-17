@@ -7,9 +7,9 @@
   > The blockchain is a nebulous object for many and this simple web application helps make transaction information more accessible.
 
 ## Get Started ##
-```npm install dependencies
+```* npm install dependencies
 ```
-```Run the start scripts located in package.json
+```* Run the start scripts located in package.json
 ```
 
 ## Addition Info ##
