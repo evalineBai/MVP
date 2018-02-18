@@ -1,14 +1,23 @@
 import React from 'react';
 
-const Account = ({addresses}) => (
+class Account extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  <div>
-    <h2>Displaying Account Information for: {addresses.address}</h2>
-
-
-
-  </div>
-
-)
+  render() {
+    return (
+      <div>
+      {console.log(this.props)}
+        <h2>Displaying Account Information for:</h2>
+        <ul>
+          {this.props.addresses.map((data, index) => {
+            return <li key={index}>{data.address}</li>
+          })}
+        </ul>
+      </div>
+    )
+  }
+}
 
 export default Account;
