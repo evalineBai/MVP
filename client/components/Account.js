@@ -1,6 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const accountStyle = {
+  'textAlign': 'left',
+  'paddingTop': '60px',
+  'marginLeft': '60px'
+}
+
+const spanStyle = {
+  'fontWeight': 'normal'
+}
+
 class Account extends React.Component {
   constructor(props) {
     super(props);
@@ -21,24 +31,24 @@ class Account extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Displaying Account Information for: {this.props.addresses.map((data, index) => {
-          return <span key={index}>{data.address}</span>
+      <div style={accountStyle}>
+        <h4>Displaying Account Information for: {this.props.addresses.map((data, index) => {
+          return <span style={spanStyle} key={index}>{data.address}</span>
           })}
-        </h3>
+        </h4>
 
         <h4>Balance (Satoshi): {this.props.addresses.map((data, index) => {
-          return <span key={index}>{data.balance}</span>
+          return <span style={spanStyle} key={index}>{data.balance}</span>
           })}
         </h4>
 
         <h4>Total Satoshi Received: {this.props.addresses.map((data, index) => {
-          return <span key={index}>{data.received}</span>
+          return <span style={spanStyle} key={index}>{data.received}</span>
           })}
         </h4>
 
         <h4>Total Satoshi Sent: {this.props.addresses.map((data, index) => {
-          return <span key={index}>{data.sent}</span>
+          return <span style={spanStyle} key={index}>{data.sent}</span>
           })}
         </h4>
 

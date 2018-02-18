@@ -1,5 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Button} from 'react-bootstrap';
+
+const searchStyle = {
+  'paddingTop': '60px',
+}
+
+const buttonStyle = {
+  'marginRight': '10px',
+  'height': '35px'
+}
+
+const formStyle = {
+  'width': '500px'
+}
 
 class Search extends React.Component {
   constructor(props) {
@@ -20,9 +34,9 @@ class Search extends React.Component {
   }
 
   render() {
-    return (<div>
-      Enter A Public Key: <input value={this.state.addresses} onChange={this.onChange.bind(this)}/>
-      <button onClick={this.search.bind(this)}>Search</button>
+    return (<div style={searchStyle}>
+      <button type="button" class="btn btn-info" style={buttonStyle} onClick={this.search.bind(this)}>Search Public Key</button>
+      <input style={formStyle} value={this.state.addresses} onChange={this.onChange.bind(this)}/>
     </div>)
   }
 }

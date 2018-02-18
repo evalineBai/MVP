@@ -1,9 +1,15 @@
 import React from 'react';
 
-const Footer = () => (
-  <div>
-    <p>Thanks for visiting! If you enjoyed this product and wish to support the developer, all contributions can be made to 1Aks3fVX7rx1s6j3n19GgqMHiqRGdoV3YP.</p>
+const footStyle = {
+  'textAlign': 'center',
+  'paddingTop': '200px',
+  'fontSize': '14px',
+  'color': 'gray'
+}
 
+const Footer = () => (
+  <div style={footStyle}>
+    <footer>Evaline Bai © 2018 | Donations:1Aks3fVX7rx1s6j3n19GgqMHiqRGdoV3YP</footer>
   </div>
 )
 

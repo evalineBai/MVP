@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Search from './Search.js';
 import Account from './Account.js';
+import Header from './Header.js';
 import Footer from './Footer.js';
 import axios from 'axios';
 
 const appStyle = {
-  'textAlign': 'left',
-  'margin': '20px'
+  'textAlign': 'center',
+  'margin': '30px',
+  'fontFamily': 'Arial'
 }
 
 class App extends React.Component {
@@ -40,13 +42,9 @@ class App extends React.Component {
   render () {
     return (
       <div style={appStyle}>
-        <h2>BTC Blockchain Explorer</h2>
-        <h4>Explore Activity Behind Public Keys</h4>
-
+        <Header/>
         <Search onSearch={this.search.bind(this)}/>
-
         <Account addresses={this.state.addresses}/>
-
         <Footer/>
 
       </div>
