@@ -1,10 +1,7 @@
 # MVP: Blockchain Explorer
 
 ## Summary ##
-  > This application accesses the Bitcoin blockchain via the BlockCypher API presents account transaction information to the user.
-
-## Value ##
-  > The blockchain is a nebulous object for many and this simple web application helps make transaction information more accessible.
+  > This web application accesses the Bitcoin blockchain via the BlockCypher API and presents account transaction information to the user based on a public key query. Blockchains can be nebulous objects for many people and this helps make transaction information more accessible.
 
 ## Get Started ##
  1. npm install dependencies
