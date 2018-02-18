@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class Account extends React.Component {
   constructor(props) {
@@ -26,17 +27,17 @@ class Account extends React.Component {
           })}
         </h3>
 
-        <h4>Balance: {this.props.addresses.map((data, index) => {
+        <h4>Balance (Satoshi): {this.props.addresses.map((data, index) => {
           return <span key={index}>{data.balance}</span>
           })}
         </h4>
 
-        <h4>Total Value Received: {this.props.addresses.map((data, index) => {
+        <h4>Total Satoshi Received: {this.props.addresses.map((data, index) => {
           return <span key={index}>{data.received}</span>
           })}
         </h4>
 
-        <h4>Total Value Sent: {this.props.addresses.map((data, index) => {
+        <h4>Total Satoshi Sent: {this.props.addresses.map((data, index) => {
           return <span key={index}>{data.sent}</span>
           })}
         </h4>
