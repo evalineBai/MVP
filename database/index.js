@@ -15,21 +15,31 @@ let accountSchema = mongoose.Schema({
 
 let Account = mongoose.model('Account', accountSchema);
 
-let save = (blockData) => {
-  var account = new Account({
-    address: blockData.address,
-    balance: blockData.balance,
-    sent: blockData.sent,
-    received: blockData.received,
-    recent_transactions: blockData.recent_transactions
-  });
-
-  account.save(function(err, newAccount) {
+let save = (blockData, callback) => {
+  Account.find({'address': blockData.address}, function(err, results) {
     if (err) {
       return console.error(err);
     } else {
-      console.log('Data was successfully saved!');
-      console.log(newAccount);
+      if (results.length === 0) {
+        var account = new Account({
+          address: blockData.address,
+          balance: blockData.balance,
+          sent: blockData.sent,
+          received: blockData.received,
+          recent_transactions: blockData.recent_transactions
+        });
+        account.save(function(err, newAccount) {
+          if (err) {
+            return console.error(err);
+          } else {
+            console.log('Data was successfully saved!');
+            console.log(newAccount);
+            callback();
+          }
+        });
+      } else {
+        callback();
+      }
     }
   });
 };

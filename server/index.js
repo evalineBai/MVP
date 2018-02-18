@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/dist'));
 
 
-app.post('/accounts', function(req, res) {
+app.post('/accounts', function(req, response) {
   let address = req.body.address;
 
   let options = {
@@ -49,15 +49,15 @@ app.post('/accounts', function(req, res) {
       received: data.total_received,
       recent_transactions: transactions
     }
-    db.save(blockData);
+    db.save(blockData, function() {
+      response.send('Successful Request');
+    });
   });
 
 })
 
 app.get('/accounts', function(req, res) {
-
-  console.log('THIS IS A REQ BODY: ' + JSON.stringify(req.body));
-  db.Account.find({address: JSON.stringify(req.body.address)}).exec(function(err, account) {
+  db.Account.find(req.query).exec(function(err, account) {
     if (err) {
       console.log(err);
     }
