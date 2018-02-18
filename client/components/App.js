@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const appStyle = {
   'textAlign': 'left',
-  'margin': '20px',
+  'margin': '20px'
 }
 
 class App extends React.Component {
@@ -35,18 +35,6 @@ class App extends React.Component {
       console.log('Error saving user data', err)
     })
   }
-
-  // componentDidMount () {
-  //   axios.get('/accounts')
-  //   .then(res => {
-  //     const addresses = res.data;
-  //     console.log(addresses);
-  //     this.setState({addresses});
-  //   })
-  //   .catch(err => {
-  //     console.log('Error fetching and parsing data', err);
-  //   });
-  // }
 
   render () {
     return (
