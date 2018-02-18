@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import Search from './Search.js';
 import Account from './Account.js';
 import axios from 'axios';
-import './App.css';
+
+const appStyle = {
+  'textAlign': 'left',
+  'margin': '20px',
+}
 
 class App extends React.Component {
     constructor(props) {
@@ -14,15 +18,16 @@ class App extends React.Component {
   }
 
   search (publicKey) {
-    console.log(`${publicKey} was searched`);
+    console.log(`Searching for ${publicKey}`);
     axios.post('/accounts', {
       address: `${publicKey}`
     })
     .then(res => {
       console.log(res);
-      axios.get('/accounts')
+      axios.get(`/accounts?address=${publicKey}`)
       .then(res => {
         const addresses = res.data;
+        console.log(addresses);
         this.setState({addresses});
       })
     })
@@ -31,21 +36,21 @@ class App extends React.Component {
     })
   }
 
-  componentDidMount () {
-    axios.get('/accounts')
-    .then(res => {
-      const addresses = res.data;
-      console.log(addresses);
-      this.setState({addresses});
-    })
-    .catch(err => {
-      console.log('Error fetching and parsing data', err);
-    });
-  }
+  // componentDidMount () {
+  //   axios.get('/accounts')
+  //   .then(res => {
+  //     const addresses = res.data;
+  //     console.log(addresses);
+  //     this.setState({addresses});
+  //   })
+  //   .catch(err => {
+  //     console.log('Error fetching and parsing data', err);
+  //   });
+  // }
 
   render () {
     return (
-      <div className="App">
+      <div style={appStyle}>
         <h2>Blockchain Explorer</h2>
         <h4>Explore Activity Behind Public Keys</h4>
 
