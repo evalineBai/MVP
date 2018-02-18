@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Search from './Search.js';
 import Account from './Account.js';
+import Footer from './Footer.js';
 import axios from 'axios';
 
 const appStyle = {
@@ -39,12 +40,14 @@ class App extends React.Component {
   render () {
     return (
       <div style={appStyle}>
-        <h2>Blockchain Explorer</h2>
+        <h2>BTC Blockchain Explorer</h2>
         <h4>Explore Activity Behind Public Keys</h4>
 
         <Search onSearch={this.search.bind(this)}/>
 
         <Account addresses={this.state.addresses}/>
+
+        <Footer/>
 
       </div>
     );
