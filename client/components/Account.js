@@ -8,7 +8,13 @@ const accountStyle = {
 }
 
 const spanStyle = {
-  'fontWeight': 'normal'
+  'fontWeight': 'lighter',
+  'fontSize': '15px'
+}
+
+const ulStyle = {
+  'marginLeft': '30px',
+  'paddingTop': '20px'
 }
 
 class Account extends React.Component {
@@ -19,10 +25,10 @@ class Account extends React.Component {
   makeTransactions() {
     var transactions = this.props.addresses.map((data, index) => {
       return data.recent_transactions.map((trans, index) => {
-        return <ul key={index}>
-          <li>Date: {trans.date}</li>
-          <li>Hash: {trans.hash}</li>
-          <li>Amount: {trans.amount}</li>
+        return <ul class="list-unstyled" style={ulStyle} key={index}>
+          <li>Date: <span style={spanStyle}>{trans.date}</span></li>
+          <li>Hash: <span style={spanStyle}>{trans.hash}</span></li>
+          <li>Amount: <span style={spanStyle}>{trans.amount}</span></li>
         </ul>
       })
     })
@@ -32,28 +38,22 @@ class Account extends React.Component {
   render() {
     return (
       <div style={accountStyle}>
-        <h4>Displaying Account Information for: {this.props.addresses.map((data, index) => {
+
+        <ul class="list-group">
+          <li class="list-group-item">Displaying Account: {this.props.addresses.map((data, index) => {
           return <span style={spanStyle} key={index}>{data.address}</span>
-          })}
-        </h4>
-
-        <h4>Balance (Satoshi): {this.props.addresses.map((data, index) => {
+          })}</li>
+          <li class="list-group-item">Balance (Satoshi): {this.props.addresses.map((data, index) => {
           return <span style={spanStyle} key={index}>{data.balance}</span>
-          })}
-        </h4>
-
-        <h4>Total Satoshi Received: {this.props.addresses.map((data, index) => {
+          })}</li>
+          <li class="list-group-item">Total Satoshi Received: {this.props.addresses.map((data, index) => {
           return <span style={spanStyle} key={index}>{data.received}</span>
-          })}
-        </h4>
-
-        <h4>Total Satoshi Sent: {this.props.addresses.map((data, index) => {
+          })}</li>
+          <li class="list-group-item">Total Satoshi Sent: {this.props.addresses.map((data, index) => {
           return <span style={spanStyle} key={index}>{data.sent}</span>
-          })}
-        </h4>
-
-        <h4>Transactions:</h4>
-        <h5>{this.makeTransactions()}</h5>
+          })}</li>
+          <li class="list-group-item">Transactions: {this.makeTransactions()}</li>
+        </ul>
 
       </div>
     )
