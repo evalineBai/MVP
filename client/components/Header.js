@@ -6,7 +6,7 @@ const head = {
 }
 
 const subHead = {
-  'color': '#ACBEBE'
+  'color': '#a5b1c2'
 }
 
 const Header = () => (
