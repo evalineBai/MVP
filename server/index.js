@@ -65,8 +65,11 @@ app.get('/accounts', function(req, res) {
   });
 });
 
-app.listen(8080, function() {
-  console.log('listening on port 8080');
+
+const port = process.env.PORT || 8080;
+
+app.listen(port, function() {
+  console.log(`listening on port ${port}`);
 });
 
 
