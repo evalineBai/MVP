@@ -21,22 +21,27 @@ class App extends React.Component {
   }
 
   search (publicKey) {
-    console.log(`Searching for ${publicKey}`);
-    axios.post('/accounts', {
-      address: `${publicKey}`
-    })
-    .then(res => {
-      console.log(res);
-      axios.get(`/accounts?address=${publicKey}`)
-      .then(res => {
-        const addresses = res.data;
-        console.log(addresses);
-        this.setState({addresses});
+    if (publicKey.length !== 34) {
+      console.log('Please enter a valid query');
+      return;
+    } else {
+      console.log(`Searching for ${publicKey}`);
+      axios.post('/accounts', {
+        address: `${publicKey}`
       })
-    })
-    .catch(err => {
-      console.log('Error saving user data', err)
-    })
+      .then(res => {
+        console.log(res);
+        axios.get(`/accounts?address=${publicKey}`)
+        .then(res => {
+          const addresses = res.data;
+          console.log(addresses);
+          this.setState({addresses});
+        })
+      })
+      .catch(err => {
+        console.log('Error saving user data', err)
+      })
+    }
   }
 
   render () {
