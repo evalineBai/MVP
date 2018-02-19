@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button} from 'react-bootstrap';
 
 const searchStyle = {
   'paddingTop': '60px',
@@ -35,7 +34,7 @@ class Search extends React.Component {
 
   render() {
     return (<div style={searchStyle}>
-      <button type="button" class="btn btn-info" style={buttonStyle} onClick={this.search.bind(this)}>Search Public Key</button>
+      <button type="button" className="btn btn-info" style={buttonStyle} onClick={this.search.bind(this)}>Search Public Key</button>
       <input style={formStyle} value={this.state.addresses} onChange={this.onChange.bind(this)}/>
     </div>)
   }
