@@ -9,8 +9,15 @@ const accountStyle = {
 }
 
 const spanStyle = {
-  'fontWeight': 'lighter',
-  'fontSize': '15px'
+  'width': '230px',
+  'display': 'inline-block',
+  'fontWeight': '900'
+}
+
+const transStyle = {
+  'width': '100px',
+  'display': 'inline-block',
+  'fontWeight': '900'
 }
 
 const ulStyle = {
@@ -27,9 +34,9 @@ class Account extends React.Component {
     var transactions = this.props.addresses.map((data, index) => {
       return data.recent_transactions.map((trans, index) => {
         return <ul className="list-unstyled" style={ulStyle} key={index}>
-          <li>Date: <span style={spanStyle}>{trans.date}</span></li>
-          <li>Hash: <span style={spanStyle}>{trans.hash}</span></li>
-          <li>Amount: <span style={spanStyle}>{trans.amount}</span></li>
+          <li><span style={transStyle}>Date: </span><span>{trans.date}</span></li>
+          <li><span style={transStyle}>Hash: </span><span>{trans.hash}</span></li>
+          <li><span style={transStyle}>Amount: </span><span>{trans.amount}</span></li>
         </ul>
       })
     })
@@ -41,19 +48,19 @@ class Account extends React.Component {
       <div style={accountStyle}>
 
         <ul className="list-group">
-          <li className="list-group-item">Displaying Account: {this.props.addresses.map((data, index) => {
-          return <span style={spanStyle} key={index}>{data.address}</span>
+          <li className="list-group-item"><span style={spanStyle}>Displaying Account: </span>{this.props.addresses.map((data, index) => {
+          return <span key={index}>{data.address}</span>
           })}</li>
-          <li className="list-group-item">Balance (Satoshi): {this.props.addresses.map((data, index) => {
-          return <span style={spanStyle} key={index}>{data.balance}</span>
+          <li className="list-group-item"><span style={spanStyle}>Balance (Satoshi): </span>{this.props.addresses.map((data, index) => {
+          return <span key={index}>{data.balance}</span>
           })}</li>
-          <li className="list-group-item">Total Satoshi Received: {this.props.addresses.map((data, index) => {
-          return <span style={spanStyle} key={index}>{data.received}</span>
+          <li className="list-group-item"><span style={spanStyle}>Total Satoshi Received: </span>{this.props.addresses.map((data, index) => {
+          return <span key={index}>{data.received}</span>
           })}</li>
-          <li className="list-group-item">Total Satoshi Sent: {this.props.addresses.map((data, index) => {
-          return <span style={spanStyle} key={index}>{data.sent}</span>
+          <li className="list-group-item"><span style={spanStyle}>Total Satoshi Sent: </span>{this.props.addresses.map((data, index) => {
+          return <span key={index}>{data.sent}</span>
           })}</li>
-          <li className="list-group-item">Transactions: {this.makeTransactions()}</li>
+          <li className="list-group-item"><span style={spanStyle}>Transactions: </span>{this.makeTransactions()}</li>
         </ul>
 
       </div>
